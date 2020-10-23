@@ -29,7 +29,7 @@ def main():
                 ciphertext = ciphertext + str(key) + ','
 
         ciphertext = ciphertext[:-1]
-        print(keyspace)
+        # print(keyspace)
         print(ciphertext)
         # print(key_value)
 
