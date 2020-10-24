@@ -23,6 +23,8 @@ def crack(plain_text, cipher_text):
             if cipher_char not in key[plain_char]:
                 key[plain_char].append(cipher_char)
             if (len(key[plain_char]) > FREQUENCIES[plain_char]):
+                # print('key length: ', len(key), '\n\nkey: ', key, '\n\nillegal char: ', plain_char, key[plain_char])
+                # print('='*50)
                 return False
         else:
             key[plain_char] = [cipher_char]
