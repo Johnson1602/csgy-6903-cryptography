@@ -1,3 +1,5 @@
+import random
+
 FREQUENCIES = {" ": 19, "a": 7, "b": 1, "c": 2, "d": 4, "e": 10, "f": 2, "g": 2, "h": 5, "i": 6, "j": 1, "k": 1, "l": 3, "m": 2, "n": 6, "o": 6, "p": 2, "q": 1, "r": 5, "s": 5, "t": 7, "u": 2, "v": 1, "w": 2, "x": 1, "y": 2, "z": 1}
 
 def run():
@@ -16,6 +18,15 @@ def run():
 
     f.close()
 
+# generate random plain text string
+def generate(dictionary):
+    plain_text = ''
+    while len(plain_text) < 500:
+        index = random.randint(0, len(dictionary) - 1)
+        plain_text = plain_text + dictionary[index] + ' '
+    plain_text = plain_text[:500]
+    return plain_text
+
 def crack(plain_text, cipher_text):
     key = {}
     for plain_char, cipher_char in zip(plain_text, cipher_text):
@@ -32,4 +43,14 @@ def crack(plain_text, cipher_text):
     return True
 
 if __name__ == "__main__":
-    run()
+    # run()
+    dictionary = []
+    f = open('dictionary_2.txt')
+    for line in f:
+        line = line.strip()
+        if line is None or line == '' or line == 'Test 2':
+            continue
+        dictionary.append(line)
+    f.close()
+    plain = generate(dictionary)
+    print(plain)
