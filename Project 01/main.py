@@ -1,21 +1,40 @@
 import random
 import time
+import argparse
 
 FREQUENCIES = {" ": 19, "a": 7, "b": 1, "c": 2, "d": 4, "e": 10, "f": 2, "g": 2, "h": 5, "i": 6, "j": 1, "k": 1, "l": 3, "m": 2, "n": 6, "o": 6, "p": 2, "q": 1, "r": 5, "s": 5, "t": 7, "u": 2, "v": 1, "w": 2, "x": 1, "y": 2, "z": 1}
 
 def run():
+
+    """
+    Sample usage: python3 main.py --dict dictionary_1.txt --task 1
+    """
+
+    parser = argparse.ArgumentParser(description="Cryptanalysis of homophonic substitution ciphers.")
+    parser.add_argument("--dict",
+                        help="The name of the dictionary file with the path.",
+                        default="dictionary_1.txt")
+    parser.add_argument("--task", help="Choose which task to run",
+                        choices=["1", "2"],
+                        default="1")
+
+    # parse cmdline input
+    cmdline = parser.parse_args()
+
+    # get the input dictionary
+    dictionary = cmdline.dict
+
     # ask for cipher text input
     cipher_text = [int(c) for c in input('Please input the cipher text: ').strip().split(',')]
     print()
-    task = 2
 
     # run which task
-    if task == 1:
-        print('cracking...')
-        task1(cipher_text)
-    elif task == 2:
-        print('cracking...')
-        task2(cipher_text)
+    if cmdline.task == '1':
+        print('cracking...\n')
+        task1(cipher_text, dictionary)
+    elif cmdline.task == '2':
+        print('cracking...\n')
+        task2(cipher_text, dictionary)
 
 # generate random plain text string
 def generate(dictionary):
@@ -26,8 +45,8 @@ def generate(dictionary):
     plain_text = plain_text[:500]
     return plain_text
 
-def task1(cipher_text):
-    f = open('dictionary_1.txt')
+def task1(cipher_text, dictionary):
+    f = open(dictionary)
     for plain_text in f:
         if len(plain_text) < 30:
             continue
@@ -38,12 +57,12 @@ def task1(cipher_text):
         print('crack failed')
     f.close()
 
-def task2(cipher_text):
+def task2(cipher_text, plain_dict):
     # generate a dictionary list from dictionary file
     dictionary = []
     # store key-plain_text pair
     keys = {}
-    f = open('dictionary_2.txt')
+    f = open(plain_dict)
     for line in f:
         line = line.strip()
         if line is None or line == '' or line == 'Test 2':
@@ -102,7 +121,7 @@ def crack(plain_text, cipher_text):
 
 if __name__ == "__main__":
 
-    T1 = time.time()
+    start = time.time()
     run()
-    T2 = time.time()
-    print('Found plain text in %s seconds' % ((T2 - T1)))
+    end = time.time()
+    print('Found plain text in %.5f seconds' % ((end - start)))
