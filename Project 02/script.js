@@ -12,9 +12,10 @@ const questionData = {
 				that.parentNode.previousSibling.querySelector(".result").style.display = "block"
 				creationQuestion(questionData["device"], that.value)
 			} else {
-				let result = document.createElement("p")
-				result.innerHTML = "We recommend you choosing DES"
-				main.appendChild(result)
+				// let result = document.createElement("p")
+				// result.innerHTML = "We recommend you choosing DES"
+				// main.appendChild(result)
+				showResult("We recommend you choosing DES")
 			}
 		}
 	},
@@ -271,12 +272,49 @@ function creationQuestion(currentQuestion, result) {
 	main.appendChild(questionWrapper)
 }
 
+// show recommendation
+const recommend = document.querySelector(".recommend")
+const mask = document.querySelector(".mask")
+
+function resize() {
+	let width = window.innerWidth;
+	let height = window.innerHeight;
+	recommend.style.left = width / 2 - 300 + "px";
+	recommend.style.top = height / 2 - 280 + "px";
+	recommend.style.display = 'block';
+	mask.style.display = 'block';
+}
+
+function showResult(prompt) {
+
+	resize()
+}
+
+window.addEventListener("resize", function () {
+	if (recommend.style.display == "block") {
+		console.log("resize");
+		resize()
+	}
+})
+
+// close recommendation
+const closeRec = document.querySelector(".close")
+closeRec.addEventListener("click", function () {
+	recommend.style.display = 'none';
+	mask.style.display = 'none';
+})
+
+mask.addEventListener("click", function () {
+	recommend.style.display = 'none';
+	mask.style.display = 'none';
+})
+
 // animation
 function animate(obj, targetPosition, callback) {
 	clearInterval(obj.timer);
 
 	obj.timer = setInterval(function () {
-		console.log("still running");
+		// console.log("still running");
 		var offsetTop = window.pageYOffset;
 		// console.log("offsetTop: " + offsetTop);
 		// console.log("target: " + targetPosition);
@@ -284,7 +322,7 @@ function animate(obj, targetPosition, callback) {
 		step = step > 0 ? Math.ceil(step) : Math.floor(step);
 		if (offsetTop == targetPosition) {
 			clearInterval(obj.timer);
-			console.log("finish");
+			// console.log("finish");
 			if (callback) {
 				callback();
 			}
