@@ -10,26 +10,34 @@
 <body>
 	<!-- header -->
 	<header class="w">
-		<h1>Scheme Picker for Block Cipher</h1>
+		<h1><a href="index.html">Scheme Picker for Block Cipher</a></h1>
 	</header>
 
 	<div class="schemes">
+		<ul class="intro">
+			<li>In the table below you can find different kinds of Block Cipher schemes with their features and properties.</li>
+			<li>Columns referring to time, storage or communication complexity contain a quantitative or analytic expression for the table entries.</li>
+			<li>To find the best scheme that suits your needs, click the button down below to start a questionnaire.</li>
+		</ul>
+
 		<!-- scheme table -->
 		<table>
 			<thead>
-				<th>Criteria / Scheme</th>
-				<th>Standardization</th>
-				<th>Runtime Efficiency</th>
-				<th>Security</th>
-				<th>Block Size</th>
-				<th>Key Size</th>
-				<th>RAM Cost</th>
+				<tr>
+					<th>Criteria / Scheme</th>
+					<th>Standardization</th>
+					<th>Runtime Efficiency</th>
+					<th>Security</th>
+					<th>Block Size</th>
+					<th>Key Size</th>
+					<th>RAM Cost</th>
+				</tr>
 			</thead>
 			<tbody></tbody>
 		</table>
 
 		<!-- start -->
-		<a href="picker.html">Get started</a>
+		<a href="picker.html" class="start">Get started<span></span></a>
 	</div>
 
 	<!-- import js -->

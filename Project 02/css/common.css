@@ -1,40 +1,40 @@
 @font-face {
-    font-family: 'icomoon';
-    src:  url('../fonts/icomoon.eot?vvq1l5');
-    src:  url('../fonts/icomoon.eot?vvq1l5#iefix') format('embedded-opentype'),
-      url('../fonts/icomoon.ttf?vvq1l5') format('truetype'),
-      url('../fonts/icomoon.woff?vvq1l5') format('woff'),
-      url('../fonts/icomoon.svg?vvq1l5#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: block;
+	font-family: 'icomoon';
+	src:  url('../fonts/icomoon.eot?vvq1l5');
+	src:  url('../fonts/icomoon.eot?vvq1l5#iefix') format('embedded-opentype'),
+	  url('../fonts/icomoon.ttf?vvq1l5') format('truetype'),
+	  url('../fonts/icomoon.woff?vvq1l5') format('woff'),
+	  url('../fonts/icomoon.svg?vvq1l5#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
   }
 
 /* clear style */
 * {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 button {
-    cursor: pointer
+	cursor: pointer
 }
 
 body {
-    -webkit-font-smoothing: antialiased;
-    background-color: #fff;
-    font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
-    color: #333
+	-webkit-font-smoothing: antialiased;
+	background-color: #fff;
+	font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+	color: #333
 }
 
 .w {
-    width: 960px;
-    margin: 0 auto;
+	width: 960px;
+	margin: 0 auto;
 }
 
 a {
-    color: #af87ff;
-    text-decoration: none
+	color: #af87ff;
+	text-decoration: none
 }
 
 /* header */
@@ -42,21 +42,24 @@ header {
 	height: 110px;
 	line-height: 110px;
 	font-size: 22px;
-	/* background-color: #eee; */
 	text-align: center;
+}
+
+header h1 a {
+	color: #333333;
 }
 
 /* clear float */
 .clearfix::before,
 .clearfix::after {
-    content: "";
-    display: table;
+	content: "";
+	display: table;
 }
 
 .clearfix:after {
-    clear: both;
+	clear: both;
 }
 
 .clearfix {
-    *zoom: 1;
+	*zoom: 1;
 }
