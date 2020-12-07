@@ -3,8 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
+	<title>Scheme Picker | Home</title>
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 	<!-- header -->
@@ -12,24 +13,26 @@
 		<h1>Scheme Picker for Block Cipher</h1>
 	</header>
 
-	<!-- questions -->
-	<section class="w main">
-		<!-- <div class="question-wrapper">
-			<div class="qhead">
-				<h4 class="question">What do you want to use the scheme for?</h4>
-				<div class="result">
-					<button>Application</button>
-					<span>Click to &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;change</span>
-				</div>
-			</div>
-			<div class="answer-wrapper">
-				<button value="Application">Application</button>
-				<button value="Study">Study</button>
-			</div>
-		</div> -->
-	</section>
+	<div class="schemes">
+		<!-- scheme table -->
+		<table>
+			<thead>
+				<th>Criteria / Scheme</th>
+				<th>Standardization</th>
+				<th>Runtime Efficiency</th>
+				<th>Security</th>
+				<th>Block Size</th>
+				<th>Key Size</th>
+				<th>RAM Cost</th>
+			</thead>
+			<tbody></tbody>
+		</table>
+
+		<!-- start -->
+		<a href="picker.html">Get started</a>
+	</div>
 
 	<!-- import js -->
-	<script src="script.js"></script>
+	<script src="js/index.js"></script>
 </body>
 </html>
