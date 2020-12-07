@@ -15,7 +15,8 @@ const questionData = {
 				// let result = document.createElement("p")
 				// result.innerHTML = "We recommend you choosing DES"
 				// main.appendChild(result)
-				showResult("We recommend you choosing DES")
+				let recScheme = ["DES", "3DES", "AES", "Block cipher's modes of operations"]
+				showResult(recScheme)
 			}
 		}
 	},
@@ -285,8 +286,13 @@ function resize() {
 	mask.style.display = 'block';
 }
 
-function showResult(prompt) {
-
+function showResult(recScheme) {
+	let best = recommend.querySelector(".best").querySelector("h2")
+	best.innerHTML = recScheme[0]
+	let alts = recommend.querySelector(".alt").querySelectorAll("li")
+	for (let i = 0; i < 3; i++) {
+		alts[i].innerHTML = recScheme[i + 1]
+	}
 	resize()
 }
 

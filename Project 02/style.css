@@ -210,43 +210,49 @@ header {
 	font-size: 15px;
 }
 
-.recommend .rbody p:first-child {
-	margin-top: 20px;
+.recommend .rbody .best {
+	margin: 20px 0 30px;
+}
+
+.recommend .rbody .best p {
+	margin-bottom: 20px;
 	font-size: 20px;
 	font-weight: 700;
 }
 
-.recommend .rbody h2 {
-	padding: 10px;
-	margin: 20px 50px;
+.recommend .rbody .best h2 {
+	margin: 0 30px;
+	padding: 10px 0;
 	text-align: center;
 	font-size: 35px;
 	background-color: #9ed2ee;
 	border-radius: 10px;
-	box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
-.recommend .rbody ul {
-	margin: 5px 0 30px 0;
+.recommend .rbody .alt ul {
+	margin: 5px 0 25px 0;
 	padding: 0 50px;
 	font-weight: 700;
 }
 
-.recommend .rbody p:nth-child(5) {
-	height: 60px;
-	line-height: 60px;
+.recommend .rbody .again p {
+	height: 55px;
+	line-height: 55px;
 	border-top: 2px solid #444444;
+	text-align: center;
 	font-size: 20px;
 	font-weight: 700;
 }
 
-.recommend .rbody a {
-	margin-bottom: 30px;
+.recommend .rbody .again a {
+	float: none;
+	margin: 0 auto;
 	text-align: center;
 	line-height: 50px;
 	color: #9996e4;
 	background-color: #fff;
-	box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 .recommend .rbody a:hover {
