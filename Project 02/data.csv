@@ -5,14 +5,14 @@ application,normal,security,yes,yes,no,no,3DES-OFB
 application,normal,security,yes,yes,yes,yes,IDEA-OFB
 application,normal,security,no,yes,no,no,3DES-OFB
 application,normal,security,no,yes,yes,no,3DES-OFB
-application,normal,security,no,no,no,yes,IDEA-OFB
+application,normal,security,no,no,no,yes,IDEA
 application,normal,efficiency,no,no,no,no,BF
 application,normal,efficiency,yes,no,no,no,BF-CBC
 application,normal,efficiency,yes,yes,no,no,BF-OFB
 application,normal,efficiency,yes,yes,yes,yes,AES-OFB
 application,normal,efficiency,no,yes,no,no,BF-OFB
 application,normal,efficiency,no,yes,yes,no,BF-OFB
-application,normal,efficiency,no,no,no,yes,AES-OFB
+application,normal,efficiency,no,no,no,yes,AES
 study,normal,security,yes,yes,yes,yes,DES
 study,normal,security,yes,yes,no,no,DES
 study,normal,security,yes,no,yes,no,DES
@@ -30,7 +30,7 @@ application,normal,both,yes,no,no,no,AES-CBC
 application,normal,both,yes,yes,no,no,AES-OFB
 application,normal,both,yes,yes,yes,yes,AES-OFB
 application,normal,both,no,yes,no,no,AES-OFB
-application,normal,both,no,no,no,yes,AES-OFB
+application,normal,both,no,no,no,yes,AES
 application,resource-constrained,both,no,no,no,no,Simon
 application,resource-constrained,both,yes,yes,no,no,Simon
 application,resource-constrained,both,yes,no,yes,no,Simon

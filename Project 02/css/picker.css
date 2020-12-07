@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:  url('fonts/icomoon.eot?vvq1l5');
-	src:  url('fonts/icomoon.eot?vvq1l5#iefix') format('embedded-opentype'),
-	  url('fonts/icomoon.ttf?vvq1l5') format('truetype'),
-	  url('fonts/icomoon.woff?vvq1l5') format('woff'),
-	  url('fonts/icomoon.svg?vvq1l5#icomoon') format('svg');
+	src:  url('../fonts/icomoon.eot?vvq1l5');
+	src:  url('../fonts/icomoon.eot?vvq1l5#iefix') format('embedded-opentype'),
+	  url('../fonts/icomoon.ttf?vvq1l5') format('truetype'),
+	  url('../fonts/icomoon.woff?vvq1l5') format('woff'),
+	  url('../fonts/icomoon.svg?vvq1l5#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -170,7 +170,7 @@ header {
 .recommend {
 	display: none;
 	position: absolute;
-	z-index: 1;
+	z-index: 999;
 	width: 600px;
 	height: 560px;
 	/* border: 1px solid #cccccc; */
@@ -206,6 +206,7 @@ header {
 }
 
 .recommend .rbody{
+	position: relative;
 	padding: 0 40px;
 	font-size: 15px;
 }
@@ -234,6 +235,13 @@ header {
 	margin: 5px 0 25px 0;
 	padding: 0 50px;
 	font-weight: 700;
+}
+
+.recommend .rbody .again {
+	position: absolute;
+	width: 520px;
+	left: 40px;
+	top: 325px;
 }
 
 .recommend .rbody .again p {
