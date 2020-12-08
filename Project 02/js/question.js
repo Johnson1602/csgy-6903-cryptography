@@ -6,6 +6,8 @@ const questionData = {
 			// that: the clicked button (with its value: that.value)
 			// result:
 			if (that.value == "Application") {
+				// update question process
+				updateProcess(17)
 				// hide button (choices)
 				that.parentNode.style.display = "none"
 				// show choosen result prompt
@@ -13,6 +15,7 @@ const questionData = {
 				creationQuestion(questionData["device"], that.value)
 				return true
 			} else {
+				updateProcess(100)
 				let recScheme = ["DES", "3DES", "AES", "Block cipher's modes of operations"]
 				showResult(recScheme)
 				return false
@@ -24,11 +27,13 @@ const questionData = {
 		answer: ["Normal Device", "Resource Constrained Device"],
 		func: function (that, result) {
 			if (that.value == "Normal Device") {
+				updateProcess(33)
 				that.parentNode.style.display = "none"
 				that.parentNode.previousSibling.querySelector(".result").style.display = "block"
 				creationQuestion(questionData["feature"], that.value)
 				return true
 			} else {
+				updateProcess(100)
 				let recScheme = ["SIMON"]
 				showResult(recScheme)
 				return false
@@ -40,11 +45,13 @@ const questionData = {
 		answer: ["Security", "Efficiency", "Security And Efficiency"],
 		func: function (that, result) {
 			if (that.value == "Security And Efficiency") {
+				updateProcess(60)
 				that.parentNode.style.display = "none"
 				that.parentNode.previousSibling.querySelector(".result").style.display = "block"
 				creationQuestion(questionData["stream"], "Both")
 				return true
 			} else {
+				updateProcess(50)
 				that.parentNode.style.display = "none"
 				that.parentNode.previousSibling.querySelector(".result").style.display = "block"
 				creationQuestion(questionData["stream"], that.value)
@@ -59,40 +66,48 @@ const questionData = {
 			// come from feature needs security only
 			if (result == "Security-No") {
 				if (that.value == "YES") {
+					updateProcess(100)
 					let recScheme = ["AES In CBC Mode", "IDEA"]
 					showResult(recScheme)
 					return false
 				} else {
+					updateProcess(100)
 					let recScheme = ["AES In CBC Mode", "IDEA", "3DES"]
 					showResult(recScheme)
 					return false
 				}
 			} else if (result == "Security-Yes") {
 				if (that.value == "YES") {
+					updateProcess(100)
 					let recScheme = ["AES In GCM Mode", "IDEA In GCM Mode", "AES In CTR Mode", "IDEA In CTR Mode"]
 					showResult(recScheme)
 					return false
 				} else {
+					updateProcess(100)
 					let recScheme = ["AES In GCM Mode", "IDEA In GCM Mode", "3DES In GCM Mode"]
 					showResult(recScheme)
 					return false
 				}
 			} else if (result == "Efficiency-No") {
 				if (that.value == "YES") {
+					updateProcess(100)
 					let recScheme = ["AES In GCM Mode", "AES In CBC Mode", "AES In CTR Mode"]
 					showResult(recScheme)
 					return false
 				} else {
+					updateProcess(100)
 					let recScheme = ["AES In GCM Mode", "AES In CBC Mode", "Blowfish In GCM Mode", "Blowfish In CBC Mode"]
 					showResult(recScheme)
 					return false
 				}
 			} else if (result == "Efficiency-Yes") {
 				if (that.value == "YES") {
+					updateProcess(100)
 					let recScheme = ["AES In GCM Mode", "AES In CTR Mode", "AES In OFB Mode"]
 					showResult(recScheme)
 					return false
 				} else {
+					updateProcess(100)
 					let recScheme = ["AES In GCM Mode", "AES In CTR Mode", "Blowfish In GCM Mode", "Blowfish In CTR Mode"]
 					showResult(recScheme)
 					return false
@@ -106,11 +121,13 @@ const questionData = {
 		func: function (that, result) {
 			if (result == "Security") {
 				if (that.value == "YES") {
+					updateProcess(75)
 					that.parentNode.style.display = "none"
 					that.parentNode.previousSibling.querySelector(".result").style.display = "block"
 					creationQuestion(questionData["hash"], "Security-Yes")
 					return true
 				} else {
+					updateProcess(67)
 					that.parentNode.style.display = "none"
 					that.parentNode.previousSibling.querySelector(".result").style.display = "block"
 					creationQuestion(questionData["photo"], "Security")
@@ -118,11 +135,13 @@ const questionData = {
 				}
 			} else if (result == "Efficiency") {
 				if (that.value == "YES") {
+					updateProcess(75)
 					that.parentNode.style.display = "none"
 					that.parentNode.previousSibling.querySelector(".result").style.display = "block"
 					creationQuestion(questionData["hash"], "Efficiency-Yes")
 					return true
 				} else {
+					updateProcess(67)
 					that.parentNode.style.display = "none"
 					that.parentNode.previousSibling.querySelector(".result").style.display = "block"
 					creationQuestion(questionData["photo"], "Efficiency")
@@ -130,10 +149,12 @@ const questionData = {
 				}
 			} else if (result == "Both") {
 				if (that.value == "YES") {
+					updateProcess(100)
 					let recScheme = ["AES In GCM Mode", "AES In CTR Mode", "AES In OFB Mode"]
 					showResult(recScheme)
 					return false
 				} else {
+					updateProcess(80)
 					that.parentNode.style.display = "none"
 					that.parentNode.previousSibling.querySelector(".result").style.display = "block"
 					creationQuestion(questionData["photo"], "Both")
@@ -148,10 +169,12 @@ const questionData = {
 		func: function (that, result) {
 			if (result == "Security") {
 				if (that.value == "YES") {
+					updateProcess(100)
 					let recScheme = ["AES In GCM Mode", "AES In CBC Mode", "IDEA In GCM Mode", "3DES In GCM Mode"]
 					showResult(recScheme)
 					return false
 				} else {
+					updateProcess(83)
 					that.parentNode.style.display = "none"
 					that.parentNode.previousSibling.querySelector(".result").style.display = "block"
 					creationQuestion(questionData["hash"], "Security-No")
@@ -159,10 +182,12 @@ const questionData = {
 				}
 			} else if (result == "Efficiency") {
 				if (that.value == "YES") {
+					updateProcess(100)
 					let recScheme = ["AES In CBC Mode", "Blowfish In CBC Mode"]
 					showResult(recScheme)
 					return false
 				} else {
+					updateProcess(83)
 					that.parentNode.style.display = "none"
 					that.parentNode.previousSibling.querySelector(".result").style.display = "block"
 					creationQuestion(questionData["hash"], "Efficiency-No")
@@ -170,10 +195,12 @@ const questionData = {
 				}
 			} else if (result == "Both") {
 				if (that.value == "YES") {
+					updateProcess(100)
 					let recScheme = ["AES In GCM Mode", "AES In CBC Mode", "AES In CTR Mode"]
 					showResult(recScheme)
 					return false
 				} else {
+					updateProcess(100)
 					let recScheme = ["AES In GCM Mode", "AES In CBC Mode", "AES In CTR Mode"]
 					showResult(recScheme)
 					return false
