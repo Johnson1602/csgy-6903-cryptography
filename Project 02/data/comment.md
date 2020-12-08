@@ -8,6 +8,7 @@
 	- 3DES-CBC: 3DES, AES, IDEA (CBC, OFB or CTR mode)
 	- 3DES-OFB: 3DES, AES, IDEA (OFB or CTR mode)
 	- IDEA-OFB: AES, IDEA (OFB or CTR mode)
+	- IDEA: AES, IDEA (any mode)
 - Efficiency
 	- BF: AES, Blowfish (any mode)
 	- BF-CBC: AES, Blowfish (CBC, OFB or CTR mode)
