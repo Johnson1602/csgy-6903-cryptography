@@ -5,7 +5,8 @@ header .process {
 	left: 0;
 	width: 0;
 	height: 4px;
-	background-color: #31ab52;
+	/* background-color: #31ab52; */
+	background: -webkit-linear-gradient(-45deg, #ffa745 0%, #fe869f 30%, #ef7ac8 45%, #a083ed 70%, #43aeff 85%);
 }
 
 /* questions section */
@@ -208,12 +209,11 @@ header .process {
 	line-height: 50px;
 	color: #9996e4;
 	background-color: #fff;
-	box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
 .recommend .rbody a:hover {
-	color: #ffffff;
-	background-color: #9996e4;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* mask */
