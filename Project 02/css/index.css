@@ -75,7 +75,9 @@ table tbody tr:last-child td:last-child {
 
 /* get started button */
 .start {
-	margin: 60px auto 0px;
+	margin: 50px auto;
+	padding: 0;
+	height: 100px;
 	line-height: 100px;
 	text-align: center;
 	font-size: 30px;

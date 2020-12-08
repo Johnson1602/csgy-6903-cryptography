@@ -67,11 +67,14 @@ header h1 a {
 .special-btn {
 	display: block;
 	margin: 30px 330px 0;
+	padding-top: 15px;
 	width: 300px;
-	height: 100px;
+	height: 85px;
+	line-height: 35px;
 	margin-right: 20px;
 	font-size: 30px;
 	font-weight: 700;
+	text-align: center;
 	color: #ffffff;
 	border: none;
 	border-radius: 20px;

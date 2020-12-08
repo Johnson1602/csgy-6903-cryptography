@@ -154,13 +154,14 @@ function showResult(recScheme) {
 	resize()
 
 	if (!document.querySelector(".special-btn")) {
-		let button = document.createElement("button")
-		button.className = "special-btn text-gradient"
-		button.innerHTML = "Show Recommendation"
-		button.addEventListener("click", function () {
+		let a = document.createElement("a")
+		a.href = "javascript:void(0)"
+		a.className = "special-btn text-gradient"
+		a.innerHTML = "Show<br>Recommendation"
+		a.addEventListener("click", function () {
 			resize()
 		})
-		main.appendChild(button)
+		main.appendChild(a)
 	}
 }
 
