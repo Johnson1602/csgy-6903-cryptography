@@ -1,4 +1,5 @@
 var currentIndex = 0
+const process = document.querySelector(".process")
 
 // main questions section
 const main = document.querySelector(".main")
@@ -50,13 +51,15 @@ function creationQuestion(currentQuestion, result) {
 		if (currentOffsetTop < optimalHeight) {
 			animate(window, 0)
 		}
-		// else {
-		// 	// calculate scroll distance
-		// 	let distance = Math.floor(currentOffsetTop - optimalHeight)
-		// 	// let distance = Math.floor(newOffsetTop - optimalHeight) + 40
-		// 	main.style.height = windowHeight + distance - 120 + "px"
-		// 	animate(window, distance)
-		// }
+
+		// update question process
+		let targetWidth = (currentIndex - 1) * 16
+		updateProcess(targetWidth)
+
+		// remove show recommendation button if exists
+		if (document.querySelector(".special-btn")) {
+			document.querySelector(".special-btn").remove()
+		}
 	})
 	resultWrapper.appendChild(resultButton)
 	resultWrapper.appendChild(span)
@@ -77,6 +80,11 @@ function creationQuestion(currentQuestion, result) {
 
 		// register events for buttons
 		button.addEventListener("click", function () {
+			// remove show recommendation button if exists
+			if (document.querySelector(".special-btn")) {
+				document.querySelector(".special-btn").remove()
+			}
+
 			that = this
 			this.parentNode.parentNode.className = "question-wrapper selected"
 			this.parentNode.previousSibling.querySelector("button").innerHTML = this.value
@@ -116,7 +124,7 @@ function resize() {
 	let width = window.innerWidth;
 	let height = window.innerHeight;
 	recommend.style.left = width / 2 - 300 + "px";
-	recommend.style.top = height / 2 - 280 + window.pageYOffset + "px";
+	recommend.style.top = height / 2 - 280 + "px";
 	recommend.style.display = 'block';
 	mask.style.display = 'block';
 }
@@ -126,6 +134,14 @@ function showResult(recScheme) {
 	best.innerHTML = recScheme[0]
 	let alts = recommend.querySelector(".alt").querySelector("ul")
 	if (recScheme.length > 1) {
+		// clear previous result
+		let lis = alts.querySelectorAll("li")
+		let length = lis.length
+		for (let i = 0; i < length; i++) {
+			lis[i].remove()
+		}
+
+		// show alternative choice(s)
 		alts.parentNode.style.display = "block"
 		for (let i = 0; i < recScheme.length - 1; i++) {
 			let li = document.createElement("li")
@@ -136,6 +152,16 @@ function showResult(recScheme) {
 		alts.parentNode.style.display = "none"
 	}
 	resize()
+
+	if (!document.querySelector(".special-btn")) {
+		let button = document.createElement("button")
+		button.className = "special-btn text-gradient"
+		button.innerHTML = "Show Recommendation"
+		button.addEventListener("click", function () {
+			resize()
+		})
+		main.appendChild(button)
+	}
 }
 
 window.addEventListener("resize", function () {
@@ -149,21 +175,11 @@ const closeRec = document.querySelector(".close")
 closeRec.addEventListener("click", function () {
 	recommend.style.display = 'none';
 	mask.style.display = 'none';
-	let lis = recommend.querySelector(".alt").querySelectorAll("li")
-	let length = lis.length
-	for (let i = 0; i < length; i++) {
-		lis[i].remove()
-	}
 })
 
 mask.addEventListener("click", function () {
 	recommend.style.display = 'none';
 	mask.style.display = 'none';
-	let lis = recommend.querySelector(".alt").querySelectorAll("li")
-	let length = lis.length
-	for (let i = 0; i < length; i++) {
-		lis[i].remove()
-	}
 })
 
 // animation
@@ -181,6 +197,23 @@ function animate(obj, targetPosition, callback) {
 			}
 		} else {
 			window.scroll(0, offsetTop + step);
+		}
+	}, 10)
+}
+
+function updateProcess(targetWidth) {
+	// clear previous timer
+	clearInterval(process.timer);
+
+	// set timer to update process length
+	process.timer = setInterval(function () {
+		var currentWidth = Number(process.style.width.split("%")[0])
+		var step = (targetWidth - currentWidth) / 10;
+		step = step > 0 ? Math.ceil(step) : Math.floor(step);
+		if (currentWidth == targetWidth) {
+			clearInterval(process.timer);
+		} else {
+			process.style.width = currentWidth + step + "%"
 		}
 	}, 10)
 }

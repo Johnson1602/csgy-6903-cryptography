@@ -63,3 +63,29 @@ header h1 a {
 .clearfix {
 	*zoom: 1;
 }
+
+.special-btn {
+	display: block;
+	margin: 30px 330px 0;
+	width: 300px;
+	height: 100px;
+	margin-right: 20px;
+	font-size: 30px;
+	font-weight: 700;
+	color: #ffffff;
+	border: none;
+	border-radius: 20px;
+	transition: all .1s;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	outline: none;
+}
+
+.special-btn:hover {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+}
+
+.text-gradient {
+	background: -webkit-linear-gradient(-45deg, #ffa745 0%, #fe869f 30%, #ef7ac8 45%, #a083ed 70%, #43aeff 85%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
