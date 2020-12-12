@@ -37,7 +37,7 @@ const schemeData = [{
 	security: "Not known to be efficiently breakable",
 	block: "64 bits, large enough for hash function uses",
 	key: "128 bits",
-	type: "ARX"
+	type: "Lai–Massey"
 },{
 	scheme: "SIMON",
 	standardization: "Wannabe standard",
